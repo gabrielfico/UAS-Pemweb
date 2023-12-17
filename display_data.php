@@ -31,7 +31,7 @@ if ($result) {
                 <th>Action</th>
             </tr>
             <?php
-            // Loop through the data and display it in a table
+            // Mengulang data dan menampilkan data
             while ($row = mysqli_fetch_assoc($result)) {
                 ?>
                 <tr>
@@ -51,7 +51,8 @@ if ($result) {
     </body>
     </html>
     <?php
-} else {
+}
+else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
