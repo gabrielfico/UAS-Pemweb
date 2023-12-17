@@ -23,8 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 if (password_verify($password, $row['pass'])) {
                     header("Location: display_data.php");
                     exit();
-                    // Here, you can save user information to session or cookie
-                    // and redirect the user to the main page after login
                 } else {
                     echo "Login failed. Invalid password.";
                 }
