@@ -13,7 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (mysqli_query($conn, $sql)) {
         echo "Mahasiswa data added successfully!";
-    } else {
+    }
+    else {
         echo "Error adding mahasiswa data: " . mysqli_error($conn);
     }
     header("Location: display_data.php");
