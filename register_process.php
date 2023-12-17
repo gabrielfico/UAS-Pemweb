@@ -1,5 +1,4 @@
 <?php
-// register_process.php
 
 require_once('config.php');
 
@@ -14,12 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO tbl_user (fullname, phone, email, pass) VALUES ('$name', '$phone', '$email', '$password')";
 
     if (mysqli_query($conn, $sql)) {
-        header("Location: index.php");
-        exit();
-    } else {
+        echo "Registration success.";
+    }
+    else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
+header("Location: index.php");
+exit();
 
 // Tutup koneksi
 mysqli_close($conn);
