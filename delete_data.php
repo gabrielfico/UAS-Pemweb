@@ -1,5 +1,4 @@
 <?php
-// delete_mahasiswa.php
 
 require_once('config.php');
 
@@ -11,15 +10,17 @@ if (isset($_GET['nim'])) {
     $sql = "DELETE FROM std_data WHERE nim = '$mahasiswaId'";
 
     if (mysqli_query($conn, $sql)) {
-        // echo "Mahasiswa data deleted successfully!";
-        header("Location: display_data.php");
-        exit();
-    } else {
+        echo "Mahasiswa data deleted successfully!";
+    }
+    else {
         echo "Error deleting mahasiswa data: " . mysqli_error($conn);
     }
-} else {
+} 
+else {
     echo "Invalid request.";
 }
+header("Location: display_data.php");
+exit();
 
 // Tutup koneksi
 mysqli_close($conn);
