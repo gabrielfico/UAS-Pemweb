@@ -1,5 +1,4 @@
 <?php
-// display_mahasiswa.php
 
 require_once('config.php');
 
