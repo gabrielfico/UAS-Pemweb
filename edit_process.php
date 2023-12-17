@@ -1,5 +1,4 @@
 <?php
-// update_data.php
 
 require_once('config.php');
 
@@ -13,13 +12,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE std_data SET fullname='$nama', nim='$nim', birth='$tanggal_lahir', bachelor='$program_studi' WHERE nim='$nim'";
 
     if (mysqli_query($conn, $sql)) {
-        // echo "Mahasiswa data updated successfully!";
-        header("Location: display_data.php");
-        exit();
-    } else {
+        echo "Mahasiswa data updated successfully!";
+    }
+    else {
         echo "Error updating mahasiswa data: " . mysqli_error($conn);
     }
 }
+header("Location: display_data.php");
+exit();
 
 // Tutup koneksi
 mysqli_close($conn);
