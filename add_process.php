@@ -8,18 +8,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tanggal_lahir = $_POST["birth"];
     $program_studi = $_POST["bachelor"];
 
-    // Query untuk menambahkan data mahasiswa
+    // Query untuk menambahkan data
     $sql = "INSERT INTO std_data (fullname, nim, birth, bachelor) VALUES ('$nama', '$nim', '$tanggal_lahir', '$program_studi')";
 
     if (mysqli_query($conn, $sql)) {
-        // echo "Mahasiswa data added successfully!";
-        header("Location: display_data.php");
-        exit();
+        echo "Mahasiswa data added successfully!";
     } else {
         echo "Error adding mahasiswa data: " . mysqli_error($conn);
     }
+    header("Location: display_data.php");
+    exit();
 }
 
-// Tutup koneksi
 mysqli_close($conn);
 ?>
