@@ -1,5 +1,4 @@
 <?php
-// edit_data.php
 
 require_once('config.php');
 
