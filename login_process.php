@@ -1,5 +1,4 @@
 <?php
-// login_process.php
 
 require_once('config.php');
 
@@ -21,21 +20,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (isset($row['pass'])) {
                 // Verify password
                 if (password_verify($password, $row['pass'])) {
-                    header("Location: display_data.php");
-                    exit();
-                } else {
+                    echo "Login success.";
+                }
+                else {
                     echo "Login failed. Invalid password.";
                 }
-            } else {
+            }
+            else {
                 echo "Login failed. Password field is not set in the database.";
             }
-        } else {
+        }
+        else {
             echo "Login failed. User not found.";
         }
-    } else {
+    }
+    else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
+header("Location: display_data.php");
+exit();
 
 // Close the connection
 mysqli_close($conn);
