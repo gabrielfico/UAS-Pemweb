@@ -13,11 +13,13 @@ if (isset($_GET['nim'])) {
 
     if ($result && mysqli_num_rows($result) > 0) {
         $mahasiswaData = mysqli_fetch_assoc($result);
-    } else {
+    }
+    else {
         echo "Mahasiswa not found.";
         exit();
     }
-} else {
+}
+else {
     echo "Invalid request.";
     exit();
 }
